@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8c724f50-a875-49cc-9c6c-a454d38e6726" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/by/javatr/scanner/EnterFromConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/javatr/scanner/EnterFromConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/by/javatr/task1/runner/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/javatr/task1/runner/Run.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/by/javatr/task1/util/MyArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/javatr/task1/util/MyArray.java" afterDir="false" />
     </list>
@@ -19,18 +18,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/by/javatr/task1/util/MyArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="265" column="37" lean-forward="true" selection-start-line="265" selection-start-column="37" selection-end-line="265" selection-end-column="37" />
+            <state relative-caret-position="216">
+              <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#MyArray#2;class#MyArray#0" />
-                <element signature="method#max#0;class#MyArray#0" />
+                <element signature="e#1081#1082#0" expanded="true" />
+                <element signature="e#1116#1117#0" expanded="true" />
+                <element signature="e#1146#1147#0" expanded="true" />
+                <element signature="e#1174#1175#0" expanded="true" />
+                <element signature="e#1215#1216#0" expanded="true" />
+                <element signature="e#1250#1251#0" expanded="true" />
                 <element signature="method#min#0;class#MyArray#0" />
-                <element signature="e#2147#2148#0" expanded="true" />
-                <element signature="e#2208#2209#0" expanded="true" />
-                <element signature="method#bubbleSort#0;class#MyArray#0" />
-                <element signature="method#selectionSort#0;class#MyArray#0" />
-                <element signature="e#6691#6692#0" expanded="true" />
+                <element signature="e#5867#5868#0" expanded="true" />
+                <element signature="e#5912#5913#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,18 +39,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/javatr/task1/runner/Run.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="574">
+              <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#241#242#0" expanded="true" />
-                <element signature="e#280#281#0" expanded="true" />
-                <element signature="e#1115#1116#0" expanded="true" />
-                <element signature="e#1153#1154#0" expanded="true" />
-                <element signature="e#1211#1212#0" expanded="true" />
-                <element signature="e#1252#1253#0" expanded="true" />
-                <element signature="e#1297#1298#0" expanded="true" />
-                <element signature="e#1335#1336#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,10 +66,20 @@
     <findStrings>
       <find>opora</find>
       <find>binaryFind</find>
+      <find>myArray =</find>
+      <find>fin</find>
+      <find>bi</find>
+      <find>a</find>
+      <find>bin</find>
+      <find>newElement</find>
+      <find>arr</find>
     </findStrings>
     <replaceStrings>
       <replace>middle</replace>
       <replace>binarySearch</replace>
+      <replace>return</replace>
+      <replace>el</replace>
+      <replace>a</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -87,8 +89,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/by/javatr/scanner/EnterFromConsole.java" />
-        <option value="$PROJECT_DIR$/src/by/javatr/task1/util/MyArray.java" />
         <option value="$PROJECT_DIR$/src/by/javatr/task1/runner/Run.java" />
+        <option value="$PROJECT_DIR$/src/by/javatr/task1/util/MyArray.java" />
       </list>
     </option>
   </component>
@@ -104,6 +106,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,7 +152,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -171,6 +173,15 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Task1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="by.javatr.task1.runner.Run" />
+      <module name="Day4ProjectsKatsubo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8c724f50-a875-49cc-9c6c-a454d38e6726" name="Default Changelist" comment="" />
@@ -183,33 +194,36 @@
       <workItem from="1551263628438" duration="1970000" />
       <workItem from="1551290022092" duration="8313000" />
       <workItem from="1551336418501" duration="4036000" />
+      <workItem from="1551343857176" duration="5030000" />
+      <workItem from="1551370897229" duration="6732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22930000" />
+    <option name="totallyTimeSpent" value="34692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="991" y="24" width="929" height="1056" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25198638" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.12658927" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.54525864" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.23301986" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.08943965" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.08672936" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3291536" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -226,38 +240,38 @@
     <entry file="file://$PROJECT_DIR$/src/by/javatr/scanner/EnterFromConsole.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/Integer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="244" selection-start-line="244" selection-end-line="244" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/by/javatr/task1/runner/Run.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="574">
+          <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#241#242#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1153#1154#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1252#1253#0" expanded="true" />
-            <element signature="e#1297#1298#0" expanded="true" />
-            <element signature="e#1335#1336#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/javatr/task1/util/MyArray.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="265" column="37" lean-forward="true" selection-start-line="265" selection-start-column="37" selection-end-line="265" selection-end-column="37" />
+        <state relative-caret-position="216">
+          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#MyArray#2;class#MyArray#0" />
-            <element signature="method#max#0;class#MyArray#0" />
+            <element signature="e#1081#1082#0" expanded="true" />
+            <element signature="e#1116#1117#0" expanded="true" />
+            <element signature="e#1146#1147#0" expanded="true" />
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
+            <element signature="e#1250#1251#0" expanded="true" />
             <element signature="method#min#0;class#MyArray#0" />
-            <element signature="e#2147#2148#0" expanded="true" />
-            <element signature="e#2208#2209#0" expanded="true" />
-            <element signature="method#bubbleSort#0;class#MyArray#0" />
-            <element signature="method#selectionSort#0;class#MyArray#0" />
-            <element signature="e#6691#6692#0" expanded="true" />
+            <element signature="e#5867#5868#0" expanded="true" />
+            <element signature="e#5912#5913#0" expanded="true" />
           </folding>
         </state>
       </provider>

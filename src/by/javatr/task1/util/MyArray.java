@@ -1,9 +1,11 @@
 package by.javatr.task1.util;
 
+import java.io.FileReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class MyArray {
     private int[] array;
@@ -13,9 +15,9 @@ public class MyArray {
 
     //random size, random elements
     public MyArray(){
-        array = new int[random.nextInt(10)];
+        array = new int[random.nextInt(30)];
         for (int i = 0; i < array.length; ++i){
-            array[i] = random.nextInt();
+            array[i] = random.nextInt(255);
         }
 
     }
@@ -25,15 +27,17 @@ public class MyArray {
         System.arraycopy(array, 0, this.array, 0, array.length);
     }
     //array is reading from file
-    public MyArray(Reader file){
-        //
+    public MyArray(String fileName){
+        /*FileReader fr = new FileReader(fileName);
+        Scanner scan = new Scanner(fr);
+        scan.*/
     }
 
     //random elements
     public MyArray(int size){
         array = new int[size];
         for (int i = 0; i < size; ++i)
-            array[i] = random.nextInt();
+            array[i] = random.nextInt(255);
     }
 
     public int length(){
@@ -94,21 +98,24 @@ public class MyArray {
         return sortArray;
     }
 
-    public int doBinarySearch(int aim){
-        return binarySearch(copy(), aim, 0, length());
+    public boolean binarySearch(int aim){
+        int[] sortArray = bubbleSort();
+        if (doBinarySearch(sortArray, aim, 0, length()-1) != -1)
+            return true;
+        else
+            return false;
     }
 
-    private int binarySearch(int[] ar, int aim, int left, int right){
+    private int doBinarySearch(int[] ar, int aim, int left, int right){
         if(right >= left){
-            //int mid = (right - left) / 2;
             int mid = left + (right - left) / 2;
             if (ar[mid] == aim){
                 return mid;
             }
-            if(ar[mid] < aim) {
-                return binarySearch(ar, aim, left, mid);
+            if(ar[mid] > aim) {
+                return doBinarySearch(ar, aim, left, mid-1);
             }else{
-                return binarySearch(ar, aim, mid+1, right);
+                return doBinarySearch(ar, aim, mid+1, right);
             }
 
         }
@@ -117,8 +124,7 @@ public class MyArray {
     }
 
     public int[] bubbleSort(){
-        int[] sortArray = new int[length()];
-        System.arraycopy(array, 0, sortArray, 0, length());
+        int[] sortArray = copy();
         for (int i = sortArray.length - 1; i > 0; --i){
             for (int j = 0; j < i; ++j){
                 if (sortArray[j] > sortArray[j+1]){
@@ -132,8 +138,7 @@ public class MyArray {
     }
 
     public int[] selectionSort(){
-        int[] sortArray = new int[length()];
-        System.arraycopy(array, 0, sortArray, 0, length());
+        int[] sortArray = copy();
         for (int i = 0; i < sortArray.length; ++i){
             int min = sortArray[i];
             int min_i = i;
@@ -153,80 +158,33 @@ public class MyArray {
         return sortArray;
     }
 
-    public int[] doQuickSort(){
+    public int[] insertionSort() {
         int[] a = copy();
-        quickSort(a, 0, length());
+        for (int i = 1; i < a.length; i++) {
+            int el = a[i];
+            int j = i - 1;
+            while (j >= 0 && a[j] > el) {
+                a[j + 1] = a[j];
+                j--;
+            }
+            a[j + 1] = el;
+        }
         return a;
     }
 
-    private void quickSort(int[] ar, int left, int right){
-        if (ar.length == 0)
-            return;
-        if(left >=right)
-            return;
-
-        int midIndex = left + (right - left) / 2;
-        int middle = array[midIndex];
-
-        int i = left;
-        int j = right;
-        while(i <= j) {
-            while(ar[i] < middle) {
-                i++;
-            }
-
-            while(ar[j] > middle){
-                j--;
-            }
-
-            if ( i<= j) {
-                int temp = ar[i];
-                ar[i] = ar[j];
-                ar[j] = temp;
-                i++;
-                j--;
-            }
-        }
-
-        if(left < j)
-            quickSort(ar, left, j);
-        if(right > i)
-            quickSort(ar, i, right);
-    }
-
-    public ArrayList findPrimesNumbers(){
+    public ArrayList findPrimesNumbers_Simple(){
         buf = new ArrayList();
-        Primes primes = new Primes(max());
-        for (int x : array)
-            if(primes.check(x)){
-                buf.add(x);
-            }
-        return buf;
-    }
-
-    private class Primes {
-
-        private boolean[] primes;
-
-        public Primes(int number){
-            primes = new boolean[number+1];
-            Arrays.fill(primes, true);
-            primes[0] = false;
-            primes[1] = false;
-            for(int i = 2;i*i < number;i++){
-                if(primes[i]){
-                    for(int j=i*i;j < number;j+=i){
-                        primes[j] = false;
-                    }
+        for(int i = 0; i < length(); ++i)
+            for(int j = 2; j < array[i]; ++j){
+                if (array[i] % j == 0)
+                    break;
+                if((j == array[i]) || (j > Math.sqrt(array[i]))) {
+                    //if(!buf.contains(array[i]))
+                    buf.add(array[i]);
+                    break;
                 }
             }
-
-        }
-
-        public boolean check(int number){
-            return primes[number];
-        }
-
+        return buf;
     }
 
     public ArrayList findFibonachi(){
@@ -246,12 +204,10 @@ public class MyArray {
         return buf;
     }
 
-
-
     public ArrayList findThreeNumericNumbers(){
         buf = new ArrayList();
         for (int x : array) {
-            if (x > 99 && x < 1000) {
+            if (Math.abs(x) > 99 && Math.abs(x) < 1000) {
                 int a = x / 100;
                 int b = (x / 10) % 10;
                 int c = x % 10;
@@ -277,8 +233,8 @@ public class MyArray {
 
     @Override
     public String toString() {
-        return "MyArray{" +
-                "array=" + Arrays.toString(array) +
-                '}';
+        return "MyArray@[" +
+                "" + Arrays.toString(array) +
+                ']';
     }
 }
