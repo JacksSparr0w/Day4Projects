@@ -15,7 +15,7 @@ public class MyArray {
 
     //random size, random elements
     public MyArray(){
-        array = new int[random.nextInt(30)];
+        array = new int[random.nextInt(29) + 1];
         for (int i = 0; i < array.length; ++i){
             array[i] = random.nextInt(255);
         }
@@ -98,24 +98,20 @@ public class MyArray {
         return sortArray;
     }
 
-    public boolean binarySearch(int aim){
-        int[] sortArray = bubbleSort();
-        if (doBinarySearch(sortArray, aim, 0, length()-1) != -1)
-            return true;
-        else
-            return false;
+    public int binarySearch(int aim){
+        return doBinarySearch(aim, 0, length()-1);
     }
 
-    private int doBinarySearch(int[] ar, int aim, int left, int right){
+    private int doBinarySearch(int aim, int left, int right){
         if(right >= left){
             int mid = left + (right - left) / 2;
-            if (ar[mid] == aim){
+            if (array[mid] == aim){
                 return mid;
             }
-            if(ar[mid] > aim) {
-                return doBinarySearch(ar, aim, left, mid-1);
+            if(array[mid] > aim) {
+                return doBinarySearch(aim, left, mid-1);
             }else{
-                return doBinarySearch(ar, aim, mid+1, right);
+                return doBinarySearch(aim, mid+1, right);
             }
 
         }
@@ -123,63 +119,56 @@ public class MyArray {
 
     }
 
-    public int[] bubbleSort(){
-        int[] sortArray = copy();
-        for (int i = sortArray.length - 1; i > 0; --i){
+    public void bubbleSort(){
+        for (int i = array.length - 1; i > 0; --i){
             for (int j = 0; j < i; ++j){
-                if (sortArray[j] > sortArray[j+1]){
-                    int tmp = sortArray[j];
-                    sortArray[j] = sortArray[j+1];
-                    sortArray[j+1] = tmp;
+                if (array[j] > array[j+1]){
+                    int tmp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = tmp;
                 }
             }
         }
-        return sortArray;
     }
 
-    public int[] selectionSort(){
-        int[] sortArray = copy();
-        for (int i = 0; i < sortArray.length; ++i){
-            int min = sortArray[i];
+    public void selectionSort(){
+        for (int i = 0; i < array.length; ++i){
+            int min = array[i];
             int min_i = i;
-            for (int j = i +1; j < sortArray.length; ++j){
-                if (sortArray[j] < min){
-                    min = sortArray[j];
+            for (int j = i +1; j < array.length; ++j){
+                if (array[j] < min){
+                    min = array[j];
                     min_i = j;
                 }
             }
 
             if (i != min_i){
-                int tmp = sortArray[i];
-                sortArray[i] = sortArray[min_i];
-                sortArray[min_i] = tmp;
+                int tmp = array[i];
+                array[i] = array[min_i];
+                array[min_i] = tmp;
             }
         }
-        return sortArray;
     }
 
-    public int[] insertionSort() {
-        int[] a = copy();
-        for (int i = 1; i < a.length; i++) {
-            int el = a[i];
+    public void insertionSort() {
+        for (int i = 1; i <array.length; i++) {
+            int el =array[i];
             int j = i - 1;
-            while (j >= 0 && a[j] > el) {
-                a[j + 1] = a[j];
+            while (j >= 0 &&array[j] > el) {
+               array[j + 1] =array[j];
                 j--;
             }
-            a[j + 1] = el;
+           array[j + 1] = el;
         }
-        return a;
     }
 
-    public ArrayList findPrimesNumbers_Simple(){
+    public ArrayList findPrimesNumbers(){
         buf = new ArrayList();
         for(int i = 0; i < length(); ++i)
             for(int j = 2; j < array[i]; ++j){
                 if (array[i] % j == 0)
                     break;
                 if((j == array[i]) || (j > Math.sqrt(array[i]))) {
-                    //if(!buf.contains(array[i]))
                     buf.add(array[i]);
                     break;
                 }

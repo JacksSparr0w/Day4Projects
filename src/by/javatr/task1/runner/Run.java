@@ -40,14 +40,19 @@ public class Run {
         }
         print("Массив: ", myArray.getArray());
 
-        System.out.println("Простые числа: " + myArray.findPrimesNumbers_Simple());
+        myArray.bubbleSort();
+        print("Отсортированный массив: ", myArray.getArray());
+
+        System.out.println("Простые числа: " + myArray.findPrimesNumbers());
         System.out.println("Трехзначные числа: " + myArray.findThreeNumericNumbers());
         System.out.println("Числа из последовательности Фибоначчи: " + myArray.findFibonachi());
         int number = 32;
-        System.out.println("Содержится ли число " + number + " в массиве: " + myArray.binarySearch(number));
-        print("Пузырьковая сортировка: ", myArray.bubbleSort());
-        print("Сортировка вставкой: ", myArray.insertionSort());
-        print("Сортировка выбором: ", myArray.selectionSort());
+        int index = myArray.binarySearch(number);
+        if (index == -1){
+            System.out.println("Число " + number + " не содержится в массиве.");
+        } else{
+            System.out.println("Число " + number + " есть в массиве (отсортированном) под индексом " + index);
+        }
 
 
 
