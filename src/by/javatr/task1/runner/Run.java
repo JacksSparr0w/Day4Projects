@@ -3,6 +3,7 @@ package by.javatr.task1.runner;
 import by.javatr.scanner.EnterFromConsole;
 import by.javatr.task1.util.MyArray;
 
+import java.io.IOException;
 import java.io.Reader;
 
 public class Run {
@@ -33,7 +34,7 @@ public class Run {
                 myArray = inputElements();
                 break;
             case 4:
-                //myArray = enterFromFile();
+                myArray = enterFromFile();
                 break;
             default:
                     break;
@@ -94,7 +95,14 @@ public class Run {
         return new MyArray(a);
     }
 
-    /*public static MyArray enterFromFile(){
-        return new MyArray(file);
-    }*/
+    public static MyArray enterFromFile(){
+        System.out.println("Введите имя файла. ");
+        String s = EnterFromConsole.EnterString();
+        try {
+            return new MyArray(s);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return randomSizeAndElements();
+        }
+    }
 }

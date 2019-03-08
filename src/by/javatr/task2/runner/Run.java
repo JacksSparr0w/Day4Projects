@@ -5,7 +5,7 @@ import by.javatr.task2.util.TYPE;
 
 public class Run {
     public static void main(String[] arg){
-        TYPE type = TYPE.MAX;
+        TYPE type = TYPE.SUM;
         SortJaggedArray array = new SortJaggedArray();
         array.sort(type);
         int[][] sort = array.getJaggedArray();

@@ -15,4 +15,16 @@ public class EnterFromConsole {
         a = scanner.nextDouble();
         return a;
     }
+
+    public static String EnterString() {
+        Scanner scanner = new Scanner(System.in);
+        String a;
+
+        while(!scanner.hasNextLine()) {
+            scanner.nextLine();
+        }
+
+        a = scanner.nextLine();
+        return a;
+    }
 }

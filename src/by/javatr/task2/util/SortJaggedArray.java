@@ -6,12 +6,11 @@ public class SortJaggedArray {
     private final int ROWS = 10;
     private final int ELEMENTS_IN_ROW = 15;
     private final int MAX_VALUE = 50;
-    private Random random;
     private int[][] jaggedArray;
     private int[] buf;
 
     public SortJaggedArray(){
-        random = new Random();
+        Random random = new Random();
         jaggedArray = new int[random.nextInt(ROWS)+2][];
 
         for (int i = 0; i < jaggedArray.length; ++i){

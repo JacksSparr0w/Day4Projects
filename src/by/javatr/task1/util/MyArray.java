@@ -1,7 +1,6 @@
 package by.javatr.task1.util;
 
-import java.io.FileReader;
-import java.io.Reader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -26,11 +25,18 @@ public class MyArray {
         this.array = new int[array.length];
         System.arraycopy(array, 0, this.array, 0, array.length);
     }
+
     //array is reading from file
-    public MyArray(String fileName){
-        /*FileReader fr = new FileReader(fileName);
-        Scanner scan = new Scanner(fr);
-        scan.*/
+    public MyArray(String fileName) throws IOException {
+        File file = new File(fileName);
+        byte[] bytes = new byte[(int) file.length()];
+        FileInputStream fis = new FileInputStream(file);
+        fis.read(bytes);
+        fis.close();
+        String[] line = new String(bytes).trim().split("\\s+");
+        array = new int[line.length];
+        for (int i = 0; i < line.length; i++)
+            array[i] = Integer.parseInt(line[i]);
     }
 
     //random elements
@@ -168,7 +174,7 @@ public class MyArray {
             for(int j = 2; j < array[i]; ++j){
                 if (array[i] % j == 0)
                     break;
-                if((j == array[i]) || (j > Math.sqrt(array[i]))) {
+                if(((j == array[i]) || (j > Math.sqrt(array[i]))) && !buf.contains(array[i])) {
                     buf.add(array[i]);
                     break;
                 }
